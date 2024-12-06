@@ -1,10 +1,12 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import detailSlice from "./detail"; 
 
-// const store = configureStore({
-//   reducer: {
-//     detail: detailSlice,
-//   },
-// });
+import { configureStore } from '@reduxjs/toolkit';
+import  leadSlice  from './detail';
 
-// export default store;
+
+const store = configureStore({
+  reducer: {
+    lead: leadSlice,
+  },
+});
+
+export default store;

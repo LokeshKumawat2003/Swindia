@@ -54,23 +54,6 @@ EnterRoute.post("/login", async (req, res) => {
   console.log("Raw Token:", token);
 });
 
-
-// EnterRoute.get("/profile", async (req, res) => {
-//   try {
-//     const token = req.headers.authorization;
-    
-//     const decoded = jwt.verify(token,"lokesh");
-// console.log(token,"45454545454545")
-
-// const user = await UserModel.findById(decoded.id); 
-
-//     res.json({ user });
-//   } catch (error) {
-//     console.error("Error fetching profile data:", error);
-//     res.status(500).send("Internal Server Error");
-//   }
-// });
-
 EnterRoute.get("/profile", async (req, res) => {
   try {
     const token = req.headers.authorization;

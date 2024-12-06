@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 import "../componentStyle/table.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import { setLeadDetail } from "../redux/detail";
 
 const Table = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); 
   const [leads, setLeads] = useState([]);
   const [filters, setFilters] = useState({
     status: "",
@@ -19,7 +23,7 @@ const Table = () => {
     return new Date(date).getTime();
   };
 
-  1;
+
 
   useEffect(() => {
     const fetch = async () => {
@@ -86,10 +90,10 @@ const Table = () => {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
-  const HeandleView = (el) => {
-    // const dispatch = useDispatch();
-    // dispatch(el)
-    // navigator("/detaile")
+  const handleView = (lead) => {
+    // console.log(lead);
+    dispatch(setLeadDetail(lead));
+    navigate('/detaile'); 
   };
   return (
     <div>
@@ -148,7 +152,7 @@ const Table = () => {
             </thead>
             <tbody>
               {paginatedLeads.map((lead, index) => (
-                <tr key={index} onClick={() => HeandleView(lead)}>
+                <tr key={index} onClick={() => handleView(lead)}>
                   <td>{lead.leadName}</td>
                   <td>{lead.contactNumber}</td>
                   <td>{lead.email}</td>

@@ -1,18 +1,19 @@
-// import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-// export const detailSlice = createSlice({
-//   name: "detail",
-//   initialState: {
-//     detailItem: {},
-//   },
-//   reducers: {
-//     detail: (state, action) => {
-//       const item = action.payload;
-//       state.detailItem=item;
-//     },
-    
-//   },
-// });
+const initialState = {
+  selectedLead: null,
+};
 
-// export const { detail } = detailSlice.actions;
-// export default detailSlice.reducer;
+export const leadSlice = createSlice({
+  name: "lead",
+  initialState,
+  reducers: {
+    setLeadDetail: (state, action) => {
+      state.selectedLead = action.payload;
+    },
+  },
+});
+
+export const { setLeadDetail } = leadSlice.actions;
+
+export default leadSlice.reducer;
