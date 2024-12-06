@@ -29,6 +29,7 @@ This project is a React-based lead management system where users can view, creat
 - `react-hot-toast`: A library for showing toast notifications for user feedback.
 - `react-icons`: A collection of customizable icons for React applications.
 - `react-router-dom`: For routing and navigation between pages in the React app.
+- `redux`: For detais show for leads.
 
 ### Backend Dependencies
 
