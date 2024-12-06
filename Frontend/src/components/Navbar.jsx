@@ -16,7 +16,9 @@ const Navbar = () => {
     navigate("/");
   };
   const authToken = localStorage.getItem("authToken");
-
+if(!authToken){
+  navigate("/login");
+}
   return (
     <div>
       <nav>
