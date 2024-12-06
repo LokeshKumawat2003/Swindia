@@ -1,0 +1,49 @@
+.profile-page {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 100px;
+}
+
+.profile-summary {
+  margin-top: 20px;
+}
+
+.profile-summary p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.profile-summary strong {
+  font-weight: bold;
+}
+.logout-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.logout-button:hover {
+  background-color: #e60000;
+}
+.edit-admin-button {
+  background-color: #16b942;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.edit-admin-button:hover {
+  background-color: #17db4b;
+}

@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+nav {
+  background: linear-gradient(172deg, rgb(26, 150, 106), rgb(13 161 151));
+  max-width: 1300px;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.nav-box1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(172deg, rgb(26, 150, 106), rgb(13 161 151));
+}
+.nav-logo span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+.nav-search-box {
+  background-color: rgb(255, 255, 255);
+  padding: 2px 10px 2px 15px;
+  width: 65%;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  border: 2px solid rgb(26, 150, 106);
+}
+.nav-search-box:focus-within {
+  border: 2px solid rgb(56, 248, 203);
+}
+.nav-search-box input {
+  height: 35px;
+  width: 98%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+}
+.nav-search-box svg {
+  font-size: 1.4rem;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.login {
+  display: flex;
+  align-items: center;
+}
+.login span {
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
+.login svg {
+  font-size: 1.3rem;
+  color: white;
+  cursor: pointer;
+  margin: 4px 5px 0;
+}
+.nav-box2 {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.bar-box svg {
+  color: white;
+  font-size: 1.5rem;
+}
+.nav-logo2 span {
+  font-size: 1.4rem;
+  color: white;
+}
+.login2 {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.1rem;
+}
+.login2 span{
+  color: white;
+}
+.login2 svg {
+  margin: 5px 8px 0px 8px;
+}
+.serach2 {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .nav-box1 {
+    display: none;
+  }
+  .nav-box2 {
+    display: flex;
+  }
+  .serach2 {
+    display: flex;
+    padding: 8px;
+    /* background: linear-gradient(172deg, rgb(26, 150, 106), rgb(13 161 151)); */
+  }
+  .search-box2 {
+    margin: -5px auto;
+  }
+  .search-box2 input {
+    height: 25px;
+    font-size: 0.85rem;
+  }
+}

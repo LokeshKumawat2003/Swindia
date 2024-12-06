@@ -1,0 +1,60 @@
+.table-container {
+    margin: 20px;
+    overflow-x: auto;
+    margin-top: 100px;
+  }
+  
+  .lead-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .lead-table th,
+  .lead-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  .lead-table th:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .controls {
+   
+    margin-bottom: 15px;
+  }
+  
+  .controls input,
+  .controls select {
+    
+    margin-right: 10px;
+    padding: 8px;
+  }
+  .table-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1300px;
+  }
+  .search-input{
+    width: 80%;
+    margin: 15px; 
+  
+    height: 42px;
+  }
+  .pagination {
+    margin-top: 15px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
