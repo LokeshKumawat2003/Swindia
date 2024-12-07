@@ -9,6 +9,7 @@ This project is a React-based lead management system where users can view, creat
 - **Profile View:** Users can view their profile information such as name, email, phone number, and address.
 - **Admin Edit:** Users can update their profile information including name, email, password, phone number, and address.
 - **Logout:** Users can log out and clear their session data.
+- **Admin send Notification:** Admin can send Notification
 - **Admin Access:** Users can navigate to the admin page if they have admin rights.
 
 ## Tech Stack

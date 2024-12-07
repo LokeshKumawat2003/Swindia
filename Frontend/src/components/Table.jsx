@@ -32,7 +32,6 @@ const Table = () => {
         let response = await axios.get(
           `http://localhost:8080/api/lead?page=1&limit=`
         );
-        console.log(response.data);
         setLeads(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -91,7 +90,7 @@ const Table = () => {
     currentPage * itemsPerPage
   );
   const handleView = (lead) => {
-    // console.log(lead);
+
     dispatch(setLeadDetail(lead));
     navigate('/detaile'); 
   };

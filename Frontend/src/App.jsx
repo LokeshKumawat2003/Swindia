@@ -21,7 +21,6 @@ function App() {
         console.log(error);
       });
   }, []);
-  console.log(notificationMessage.title);
   return (
     <>
       <PageRoute />
