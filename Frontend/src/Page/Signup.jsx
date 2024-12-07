@@ -28,6 +28,7 @@ const Signup = () => {
         "http://localhost:8080/enter/signup",
         formData
       );
+      alert("signup successfully")
       navigate("/login");
     } catch (error) {}
   };

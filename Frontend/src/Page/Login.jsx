@@ -1,15 +1,14 @@
-
-
 import React, { useState } from "react";
 import "../pagestyle/login.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -18,15 +17,16 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(""); 
+
+    toast.dismiss();
 
     if (!validateEmail(email)) {
-      setError("Please enter a valid email.");
+      toast.error("Please enter a valid email.");
       return;
     }
 
     if (password.length < 6) {
-      setError("Password must be at least 6 characters long.");
+      toast.error("Password must be at least 6 characters long.");
       return;
     }
 
@@ -37,13 +37,15 @@ const Login = () => {
       });
 
       localStorage.setItem("authToken", response.data.token);
+      toast.success("Login successful!");
       navigate("/");
     } catch (error) {
-    
       if (error.response && error.response.data) {
-        setError(error.response.data.message || "Login failed. Please try again.");
+        toast.error(
+          error.response.data.message || "Login failed. Please try again."
+        );
       } else {
-        setError("An unexpected error occurred. Please try again later.");
+        toast.error("An unexpected error occurred. Please try again later.");
       }
     }
   };
@@ -80,8 +82,8 @@ const Login = () => {
         <p className="new-user-text">
           New user? <Link to={"/signup"}>Sign up here</Link>
         </p>
-        {error && <p className="error-text" style={{color:"red"}}>{error}</p>}
       </form>
+      <ToastContainer />
     </div>
   );
 };

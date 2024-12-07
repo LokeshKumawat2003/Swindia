@@ -25,7 +25,7 @@ const Admin = () => {
   const [newLead, setNewLead] = useState(initialLeadState);
   const [editingLeadId, setEditingLeadId] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const [inputValue, setInputValue] = useState("");
   const fetchLeads = async () => {
     setLoading(true);
     try {
@@ -39,6 +39,21 @@ const Admin = () => {
       alert("Failed to fetch leads.");
     }
     setLoading(false);
+  };
+
+  const handleChangeInput = (e) => {
+    setInputValue(e.target.value);
+  };
+  const handleClick = async () => {
+    try {
+      const response = await axios.post("http://localhost:8080/notification", {
+        title: inputValue,
+      });
+      alert(`message add: `);
+      setInputValue("");
+    } catch (error) {
+      alert("err submit");
+    }
   };
 
   useEffect(() => {
@@ -135,6 +150,19 @@ const Admin = () => {
         )}
         <button className="add-lead-btn" onClick={handleAddOrEditLead}>
           {editingLeadId ? "Update Lead" : "Add Lead"}
+        </button>
+      </div>
+
+      <div className="input-container">
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleChangeInput}
+          placeholder="Enter Notification..."
+          className="input-box"
+        />
+        <button onClick={handleClick} className="submit-btn">
+          Submit
         </button>
       </div>
 

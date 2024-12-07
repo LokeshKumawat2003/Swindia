@@ -44,4 +44,19 @@
       grid-template-columns: 1fr;
     }
   }
-  
+  .btn-print{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .btn-print button{
+    padding: 5px 20px;
+    border: none;
+    background-color: red;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 9px;
+  }

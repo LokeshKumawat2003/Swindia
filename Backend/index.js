@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 const cors = require('cors');
 const LeadsRoute = require("./Routes/leadRoutes");
+const notificationrouter = require("./Routes/notificationRouts");
 app.use(cors());
 app.get("/", (req, res) => {
   res.send("Home of Routes");
@@ -13,6 +14,7 @@ app.get("/", (req, res) => {
 
 app.use("/enter",EnterRoute)
 app.use("/api",LeadsRoute)
+app.use("/notification",notificationrouter)
 
 
 
