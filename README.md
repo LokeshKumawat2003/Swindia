@@ -1,4 +1,7 @@
 # Swindia
+## Demo
+
+Check out the live demo of the project: [Project Demo](https://dashing-cajeta-98fada.netlify.app/)
 
 # Lead Management Application
 
