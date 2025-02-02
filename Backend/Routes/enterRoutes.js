@@ -24,7 +24,6 @@ EnterRoute.post("/signup", async (req, res) => {
         status,
       });
       const saveDetails = await userDetail.save();
-      console.log(saveDetails);
       res
         .status(201)
         .send({ response: "User registered successfully", user: saveDetails });
@@ -51,7 +50,7 @@ EnterRoute.post("/login", async (req, res) => {
     res.status(500).send({ response: "Login error", error });
   }
   let token = req.headers.token;
-  console.log("Raw Token:", token);
+
 });
 
 EnterRoute.get("/profile", async (req, res) => {
@@ -68,12 +67,12 @@ EnterRoute.get("/profile", async (req, res) => {
 
     
     const user = await UserModel.findById(decoded.id);
-    console.log(user)
+
     
     if (!user) {
       return res.status(404).send("User not found");
     }
-    console.log(user)
+
     res.status(202).json({ user });
   } catch (error) {
     console.error("Error fetching profile data:", error);

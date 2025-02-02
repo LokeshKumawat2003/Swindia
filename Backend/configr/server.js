@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const getDb = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/Swindia", {
+    await mongoose.connect("mongodb+srv://Malviyajay:masai@cluster0.7xg3wkz.mongodb.net/swindia?retryWrites=true&w=majority", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

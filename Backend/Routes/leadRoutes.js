@@ -9,6 +9,7 @@ LeadsRoute.get("/lead", async (req, res) => {
     const data = await LeadModel.find()
       .skip((page - 1) * limit)
       .limit(parseInt(limit));
+   
     res.send(data);
   } catch (error) {
     console.error("Error fetching leads:", error);
@@ -19,12 +20,10 @@ LeadsRoute.get("/lead", async (req, res) => {
 });
 
 LeadsRoute.post("/lead", async (req, res) => {
-  console.log("Received data:", req.body);
   const token = req.headers.authorization.split(" ")[1];
   const decoded = jwt.decode(token);
   let payload = req.body;
   payload.user = decoded.id;
-  console.log(payload);
   try {
     const leadData = new LeadModel(payload);
     await leadData.save();

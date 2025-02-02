@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <PageRoute />
-      <div>
+      {/* <div>
         {showNotification && (
           <Notification
             message={notificationMessage.title}
@@ -32,7 +32,7 @@ function App() {
             onClose={handleClose}
           />
         )}
-      </div>
+      </div> */}
     </>
   );
 }
