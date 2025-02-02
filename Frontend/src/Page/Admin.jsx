@@ -30,7 +30,7 @@ const Admin = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("authToken");
-      const response = await axios.get("http://localhost:8080/api/lead", {
+      const response = await axios.get("https://swindia1.onrender.com/api/lead", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setLeads(response.data);
@@ -46,7 +46,7 @@ const Admin = () => {
   };
   const handleClick = async () => {
     try {
-      const response = await axios.post("http://localhost:8080/notification", {
+      const response = await axios.post("https://swindia1.onrender.com/notification", {
         title: inputValue,
       });
       alert(`message add: `);
@@ -70,7 +70,7 @@ const Admin = () => {
     try {
       if (editingLeadId) {
         await axios.put(
-          `http://localhost:8080/api/lead/${editingLeadId}`,
+          `https://swindia1.onrender.com/api/lead/${editingLeadId}`,
           newLead,
           {
             headers: {
@@ -81,7 +81,7 @@ const Admin = () => {
         );
         alert("Lead updated successfully!");
       } else {
-        await axios.post("http://localhost:8080/api/lead", newLead, {
+        await axios.post("https://swindia1.onrender.com/api/lead", newLead, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
@@ -101,7 +101,7 @@ const Admin = () => {
   const handleDeleteLead = async (id) => {
     const token = localStorage.getItem("authToken");
     try {
-      await axios.delete(`http://localhost:8080/api/lead/${id}`, {
+      await axios.delete(`https://swindia1.onrender.com/api/lead/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Lead deleted successfully!");

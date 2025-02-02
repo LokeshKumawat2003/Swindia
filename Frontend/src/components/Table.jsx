@@ -30,7 +30,7 @@ const Table = () => {
       setLoading(true);
       try {
         let response = await axios.get(
-          `http://localhost:8080/api/lead?page=1&limit=`
+          `https://swindia1.onrender.com/api/lead?page=1&limit=`
         );
         setLeads(response.data);
       } catch (error) {

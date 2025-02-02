@@ -15,7 +15,7 @@ const Profile = () => {
       try {
         const token = localStorage.getItem("authToken");
         const response = await axios.get(
-          "http://localhost:8080/enter/profile",
+          "https://swindia1.onrender.com/enter/profile",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

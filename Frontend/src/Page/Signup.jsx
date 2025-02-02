@@ -25,7 +25,7 @@ const Signup = () => {
     try {
       console.log("Form Data Submitted:", formData);
       const response = await axios.post(
-        "http://localhost:8080/enter/signup",
+        "https://swindia1.onrender.com/enter/signup",
         formData
       );
       alert("signup successfully")
